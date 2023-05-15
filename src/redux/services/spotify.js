@@ -10,8 +10,10 @@ export const spotifyApi = createApi({
         },
     }),
     endpoints: (builder) => ({
-        getArtists: builder.query({ query: () => '/artists/one'})
+        getArtists: builder.query({ query: () => '/search/?q=a'}),
+        getArtist: builder.query({ query: () => '/search/'}),
+        getSong: builder.query({ query: () => '/search/'}),
     })
 });
 
-export const { useGetArtistsQuery } = spotifyApi;
+export const { useGetArtistsQuery, useGetArtistQuery, useGetSongQuery } = spotifyApi;
